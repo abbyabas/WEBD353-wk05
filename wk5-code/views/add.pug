@@ -1,0 +1,31 @@
+doctype html
+html
+    head
+        title= title
+        link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+        link(rel='stylesheet', href='/css/stylesheet.css')
+        
+    body
+        include ./header.pug
+        div(class="container")
+            h1 Add A Doggie!
+            form(action="/", method="POST")
+                div(class="form-group")
+                    label(for="name") Dog's Name: 
+                    input(name="name" class="form-control" placeholder="ex: Milo")
+                div(class="form-group")
+                    label(for="breed") Breed: 
+                    input(name="breed" class="form-control" placeholder="ex: Sharpei")
+                div(class="form-group")
+                    label(for="age") Age: 
+                    input(name="age" type="number" class="form-control" placeholder="ex: 2")
+                div(class="form-group")
+                    label(for="owner") Owner's Name: 
+                    input(name="owner" type="text" class="form-control" placeholder="ex: Jack Black")
+                div(class="form-group")
+                    label(for="img" class="custom-file") Upload a Photo of Your Dog: 
+                    input(name="img" type="file" id="file" class="custom-file-input" value="/images/doggo.gif")
+                    span(class="custom-file-control")
+                button(type="submit" class="btn btn-primary") Submit
+        script(src='/js/myscript.js')
+        include ./footer.pug

@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        title= title
+        link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+        link(rel='stylesheet', href='/css/stylesheet.css')
+        
+    body
+        include ./header.pug
+        div(class="container")
+            h1 Our List of Pups    
+            div(class="row")
+                -var dogs = users
+                -for(var i in dogs)
+                    div(id= i, class="col-xs-6 col-md-3")
+                        div(class="thumbnail")
+                            a(href= url)
+                                img(src= dogs[i].img)
+                            p Name: #{dogs[i].name}
+                            p Owner: #{dogs[i].owner}
+                            a(class="btn btn-primary btn-lg", href= dogs[i].id role="button") Details                    
+        script(src='/js/myscript.js')
+        include ./footer.pug
